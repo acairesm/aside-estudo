@@ -15,8 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Aside/>
-        {children}
+        <div className="w-[1200px] mx-auto my-14 max-w-[90%] flex gap-7 h-screen">
+          <Aside/>
+          {children}
+        </div>
       </body>
     </html>
   );
