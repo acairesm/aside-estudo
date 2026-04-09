@@ -1,25 +1,26 @@
-import Image from "next/image"
+import Image from "next/image";
 
-import { Avatar } from "../Avatar"
+import { Avatar } from "../Avatar";
 
 export const CardPost = ({ post }) => {
- return (
+  return (
     <article>
-        <header>
-            <figure>
-                <Image src={post.cover} alt={post.title} width={800} height={450} />
-            </figure>
-        </header>
-        <section>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-        </section>
-        <footer>
-            <Avatar 
-            name={post.author.username} 
-            imageSrc={post.author.avatar} 
-            />
-        </footer>
+      <header>
+        <figure>
+          <Image 
+          src={post.cover} 
+          alt={ `Imagem do post  ${ post.title }` } 
+          width={800} 
+          height={450} />
+        </figure>
+      </header>
+      <section>
+        <h2>{post.title}</h2>
+        <p>{post.body}</p>
+      </section>
+      <footer>
+        <Avatar name={post.author.username} imageSrc={post.author.avatar} />
+      </footer>
     </article>
- )
-} 
+  );
+};
