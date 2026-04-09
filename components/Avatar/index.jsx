@@ -4,12 +4,12 @@ export const Avatar = ({name , imageSrc}) => {
     return(
         <ul>
             <li>
-                <Image src={imageSrc}  />
+                <Image src={imageSrc} alt={name} width={32} height={32} />
             </li> 
             <li>
                 @{name}
             </li>
-        </ul>
+            </ul>
 
 
 

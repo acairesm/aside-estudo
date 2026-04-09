@@ -2,21 +2,24 @@ import Image from "next/image"
 
 import { Avatar } from "../Avatar"
 
-export const CardPost = () => {
+export const CardPost = ({ post }) => {
  return (
     <article>
         <header>
             <figure>
-                <Image />
+                <Image src={post.cover} alt={post.title} width={800} height={450} />
             </figure>
         </header>
         <section>
-            titulo
-            texto
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
         </section>
         <footer>
-            <Avatar   />
+            <Avatar 
+            name={post.author.username} 
+            imageSrc={post.author.avatar} 
+            />
         </footer>
     </article>
- ) 
+ )
 } 
