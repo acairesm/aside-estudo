@@ -9,14 +9,17 @@ async function getAllPosts(page: number) {
   return response.json();
 }
 
-export default async function Home() {
-  const { data: posts } = await getAllPosts(1);
+export default async function Home({searchParams}: {searchParams: {page: string}}) {
+  const page = parseInt(searchParams.page) || 1;
+  const { data: posts, prev, next } = await getAllPosts(page);
 
   return (
     <main className="grid">
       {posts.map((post: any) => (
         <CardPost key={post.id} post={post} />
       ))}
+      {prev && <a href={`/?page=${prev}`}>Anterior</a>}
+      {next && <a href={`/?page=${next}`}>Próximo</a>}
     </main>
   );
 }
