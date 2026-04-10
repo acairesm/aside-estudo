@@ -4,9 +4,9 @@ import { Avatar } from "../Avatar";
 
 export const CardPost = ({ post }) => {
   return (
-    <article>
-      <header>
-        <figure>
+    <article className="rounded-lg bg-[#171D1F]">
+      <header className=" rounded-t-lg bg-[#888] p-4">
+        <figure className="m-0">
           <Image 
           src={post.cover} 
           alt={ `Imagem do post  ${ post.title }` } 
@@ -14,7 +14,7 @@ export const CardPost = ({ post }) => {
           height={450} />
         </figure>
       </header>
-      <section>
+      <section className="text-[#BCBCBC] p-4">
         <h2>{post.title}</h2>
         <p>{post.body}</p>
       </section>
