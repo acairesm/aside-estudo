@@ -1,7 +1,7 @@
 import { CardPost } from "@/components/CardPost";
 
-async function getAllPosts() {
-  const response = await fetch('http://localhost:3042/posts');
+async function getAllPosts(page: number) {
+  const response = await fetch( `http://localhost:3042/posts?_page=${page}&_per_page=6` );
   if (!response.ok) {
     console.error('Erro ao buscar os posts');
     return [];
@@ -10,7 +10,7 @@ async function getAllPosts() {
 }
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const { data: posts } = await getAllPosts(1);
 
   return (
     <main className="grid">
