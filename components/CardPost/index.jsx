@@ -4,7 +4,7 @@ import { Avatar } from "../Avatar";
 
 export const CardPost = ({ post }) => {
   return (
-    <article className="w-[486px] rounded-lg bg-[#171D1F]">
+    <article className="w-[calc(50%-12px)] rounded-lg bg-[#171D1F]">
       <header className=" rounded-t-lg bg-[#888] p-4">
         <figure className="m-0">
           <Image

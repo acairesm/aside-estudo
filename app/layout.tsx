@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={prompt.className} >
       <body className={prompt.className}>
-        <div className="w-[1200px] mx-auto my-14 max-w-[90%] flex gap-7 h-screen">
+        <div className="main-content w-[1200px] mx-auto my-14 max-w-[90%] flex gap-7 h-screen">
           <Aside/>
           {children}
         </div>

@@ -13,7 +13,7 @@ export default async function Home() {
   const posts = await getAllPosts();
 
   return (
-    <main>
+    <main className="grid">
       {posts.map((post: any) => (
         <CardPost key={post.id} post={post} />
       ))}
